@@ -24,4 +24,23 @@ $(".time-block").each(function(){
 
 });
 
+// save to data to local storage 
+var saveTasks = function(time, task) {
+
+    localStorage.setItem(time, task);
+}
+
+// save tasks when clicking a save button 
+
+$(".saveBtn").on("click", function() {
+
+    var task = $(this).siblings()[1].value;
+
+    var time = $(this).siblings()[0].textContent
+                .split(" ")[0];
+    
+
+    saveTasks(time, task)
+  });
+
 
