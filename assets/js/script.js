@@ -43,4 +43,15 @@ $(".saveBtn").on("click", function() {
     saveTasks(time, task)
   });
 
+// local storage 
 
+$(".time-block").each(function(){
+
+    var timeSlot = $(this)
+    .children()[0].textContent
+    .split(" ")[0];
+
+    localStorage.getItem(timeSlot)
+    console.log(localStorage.getItem(timeSlot));
+    $(this).children()[1].textContent = localStorage.getItem(timeSlot);
+});
